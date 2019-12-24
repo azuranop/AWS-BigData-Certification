@@ -137,7 +137,7 @@ SSE is a stream-specific feature, not a shard-specific feature
 
 
 
-Kinesis Analytics:
+### Kinesis Analytics:
 
 Point Kinesis Analytics to a stream and you can run SQL to analyze streaming data in real-time.
 The service defines differently formatted data (JSON, CSV, TSV etc.) into a fixed schema that SQL expects.
@@ -169,7 +169,7 @@ Use KCL when you want a custom application using a programming language that KCL
 Kinesis Analytics internally uses KCL for instance, to do checkpointing incoming records.
 
 
-Kinesis Firehose:
+### Kinesis Firehose:
 
 Kinesis Firehose is a delivery stream.
 Firehose synchronously replicates data across 3 AZs
@@ -282,7 +282,7 @@ Rules Engine has rules with SQL-like syntax.
 Rules are used to transform messages and send messages to other AWS services via Rule Action. For example you can read from a file and set the Rule Action to write to DynamoDB table, Kinesis Firehose, Kinesis Streams, Lambda, Machine Learning, S3, SNS, SQS, ElasticSearch, CloudWatch
 
 
-Data Pipeline:
+# Data Pipeline:
 
 Used for moving data across AWS Services and across Regions if need be.
 A lot of pipeline functions can be achieved via Lambda too.
@@ -296,7 +296,7 @@ Precondition: A readiness check. This is optional. Eg: DynamoDBDataExists, Dynam
 Schedules: When to run
 
 
-DynamoDB:
+# DynamoDB:
 
 Performance requirements are specified on a table-level.
 Eventually consistent reads by default
@@ -426,10 +426,7 @@ Query() is more efficient than Scan() because Query() mentions a partition key/s
 To fetch a large number of items within the same partition key (I think this is partition, not the partition key value), Query() is more efficient than GetItem() or BatchGetItem()
 To fetch a considerable amount of items from the table, use Scan()
 
-
-
-
-EMR/Hadoop:
+# EMR/Hadoop:
 
 EMR is single AZ
 Runs as a cluster of EC2 instances
@@ -494,14 +491,13 @@ EMR Connector to Kinesis can only read from Streams, no writing back to Kinesis 
 Read throughput of EMR Kinesis Connector depends on two factors - EC2 instance size of EMR and record size in Streams.
 
 
-
-Hue:
+# Hue:
 
 LDAP authentication can be set up for Hue login by editing the MasterNode:/etc/hue/conf/hue.ini
 The best practice is to store this as a JSON file in S3, instead of as an ini file in MasterNode (AWS has a sample JSON). You can specify either JSON or Config file while creating Cluster.
 Presto can be connected to a cluster using the same JSON method.
 
-Hive:
+#nHive:
 
 You can query from and Insert data into a DynamoDB table using Hive by way of an external table in Hive (mapping table). You cannot create table, delete data or update data to DynamoDB table using Hive.
 External table is also how you access data in S3 (and share data with other resourcs).
