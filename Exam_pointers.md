@@ -1,4 +1,4 @@
-## General:
+# General:
 
 Two types of IAM policies: Managed policies and Inline policies.
 
@@ -8,9 +8,9 @@ Two types of IAM policies: Managed policies and Inline policies.
 Public key is held by the server (AWS products) and Private key is held by the clients (that access those services).
 Public key is used to encrypt and to decrypt Private key is used.
 
-Kinesis:
+# Kinesis:
 
-Kinesis Streams:
+## Kinesis Streams:
 
 Kinesis Streams manages the infrastructure for you, there is no provisioning needed.
 Streams are replicated across 3 AZs
@@ -125,9 +125,7 @@ CloudWatch can be used for detailed shard-level metrics
 
 Tagging can be used to manage resources and cost
 
-
-
-Kinesis security:
+### Kinesis security:
 
 In addition to default SSL encryption in Kinesis, you can chose to encrypt data sent to Kinesis Streams using SSE KMS (master key from either AWS or  provided by you). You can also do client side encryption (CSE) using your own libraries and send encrypted data to streams.
 Server side encryption (SSE) is the easiest because client-side applications (producers and consumers) need not be aware of encryption mechanisms.
