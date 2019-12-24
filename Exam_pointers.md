@@ -1,8 +1,9 @@
-# General:
+## General:
 
 Two types of IAM policies: Managed policies and Inline policies.
-Managed policy can be shared with multiple users, groups and roles.
-Inline policy is directly attached to a single user, group or role. Inline policy has a one-to-one relationship with the assignee. Helps when you create a special policy for a privileged user that nobody else should use.
+
+1. Managed policy can be shared with multiple users, groups and roles.
+2. Inline policy is directly attached to a single user, group or role. Inline policy has a one-to-one relationship with the assignee. Helps when you create a special policy for a privileged user that nobody else should use.
 
 Public key is held by the server (AWS products) and Private key is held by the clients (that access those services).
 Public key is used to encrypt and to decrypt Private key is used.
