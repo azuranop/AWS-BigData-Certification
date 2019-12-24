@@ -1,4 +1,4 @@
-General:
+# General:
 
 Two types of IAM policies: Managed policies and Inline policies.
 Managed policy can be shared with multiple users, groups and roles.
