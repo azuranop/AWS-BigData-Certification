@@ -496,15 +496,15 @@ Read throughput of EMR Kinesis Connector depends on two factors - EC2 instance s
 
 1. MapReduce
 
-  Batch oriented 
-  * m3 or m4 instance types
-  Scale horizontally as data grows
+   Batch oriented 
+   * m3 or m4 instance types
+   Scale horizontally as data grows
 
 2. Machine learning 
 
-  Can be compute intensive
-  * p2 instances types
-  * c3 or c4 instances types
+   Can be compute intensive
+   * p2 instances types
+   * c3 or c4 instances types
 
 3. Spark
 
