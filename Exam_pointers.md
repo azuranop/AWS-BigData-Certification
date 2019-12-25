@@ -621,7 +621,7 @@ Max. execution time = 300s (5 mins)
 Read resources listed in “Lambda in the AWS Big Data ecosystem”
 
 
-ElasticSearch:
+# ElasticSearch:
 
 ES domain consists of ES clusters.
 ES clusters consists of compute and storage resources that you specify.
@@ -629,7 +629,7 @@ To migrate existing ES to new domain, create a snapshot and save it in S3, then 
 ES is charged from instance launch through instance termination on hourly calculation.
 
 
-Redshift:
+# Redshift:
 
 Single AZ
 Distribution style = how rows are distributed into each Slices
@@ -826,14 +826,14 @@ A table alone can be restored from Snapshot. Table Restore need you to specify t
 
 Monitoring can be done using Cloudwatch. Separate dashboards for queries, loads etc.
 
-Data Lake using Spectrum/Athena:
+# Data Lake using Spectrum/Athena:
 
 Using Redshift Spectrum you can query S3 or other data sources using SQL.
 To do this first load your data in S3 (or another data source).
 Then define metadata about that data into your Redshift cluster using CREATE EXTERNAL SCHEMA SQL command. This will register S3 data in Redshift catalog and you can start issuing SQL. You can also use external schema defined on Hive Metastore - Spectrum is compatible with Hive Metastore.
 To see external tables: SVV_EXTERNAL_TABLES
 
-Athena vs Spectrum:
+## Athena vs Spectrum:
 
 Athena is the simplest way to give any employee ability to run queries on S3 data
 Used for interactive querying
@@ -849,7 +849,7 @@ Have multiple clusters (one for reporting, one for data science etc) access same
 
 Spectrum supports GZIP and SNAPPY for compression
 
-Glue:
+# Glue:
 
 ETL tool that generates code automatically in PySpark (Python API for Spark)
 Glue Crawler scans data sources and identifies schema on it’s own
@@ -862,7 +862,7 @@ provisioning flexibility (compute/storage)
 to run your own code (not Python)
 a non-Spark architecture (Hive, Pig etc.)
 
-Machine Learning:
+# Machine Learning:
 
 Confusion Matrix:
 TP FP
@@ -878,7 +878,7 @@ All other data sources can export it to S3 as csv (another FAQ section says Reds
 
 ML stops processing if dataset is found to have 10,000 or 10% erroneous data values, whichever comes first. (missing values, incompatible data types etc.)
 
-Binary Classification:
+## Binary Classification:
 
 Accuracy is represented using AUC (Area Under Curve). Values between 0 and 1. Value of 0.5 is baseline. 
 Performance is measured using values 0 through 1. If you set cut off value for Performance to too high (closer to 1) then it will help reducing FP and FN observations but in the process it will also reduce some TP and TN.
@@ -888,7 +888,7 @@ F1 score represents accuracy of a multi-class prediction.
 F1 score is the (weighted) average of all classes where each class’s accuracy is calculated the same way as Binary Classification.
 Prediction is done by assigning score to each label (class). The class with highest score is the predicted result.
 
-Regression:
+## Regression:
 
 Performance is measured using RMSE. Observations with lower RMSE than RMSE baseline value is considered positive (good).
 AWS uses RMSE to calculate Residuals (difference between actual value and predicted value) in a regression model.
@@ -926,7 +926,7 @@ Retrain with new data points (that reflect current reality) if quality of model 
 
 
 
-Quicksight (Visualization):
+# Quicksight (Visualization):
 
 Supported datasources:
 DB: Redshift, Aurora, Athena, RDS (MariaDB 10.0, SQLServer 2012, MySQL 5.1, PostgreSQL 9.3.1
@@ -968,7 +968,7 @@ Story creates a scene by scene narrative of visuals. This is helpful to show cha
 Dashboard is a read-only snapshot of an Analysis (that is a bunch of visuals). While creating dashboard you email the users who you want to access the dashboard. 
 
 
-Zeppelin:
+# Zeppelin:
 
 It’s a notebook (IDE) that you can use to collaborate with other developers for data analysis and other programming tasks.
 Supports Scala, Python, Spark SQL, Hive QL
@@ -978,7 +978,7 @@ Use cases:
 Zeppelin+Spark SQL+MLlib on EMR used for exploratory data analysis and for recommendation engines
 Zeppelin+Kinesis Streams+Spark Streams for analysis for real time data
 
-Jupyter:
+# Jupyter:
 
 It’s a notebook like Zeppelin but more popular and supports upto 40 programming languages.
 To install Jupyter on EMR, specify a custom Bootstrap Action in the EMR launch config screen. Bootstrap Action specifies additional software to be launched when EMR cluster is launching (bootstrapping). Zeppelin is also launched internally as a Bootstrap Action but since AWS directly supports it, it is available as a checkbox option along with HUE, Hive etc.
@@ -987,18 +987,19 @@ Spark users are lenient to Zeppelin.
 Python users are lenient to Jupyter
 But both Notebooks support both languages among others.
 
-D3.js:
+# D3.js:
 
 Javascript library for visualizations in browsers
 Read in data from csv, tsv or json files
 Produce html tables, SVG bar charts, interactive graphs etc. in a browser
 
 
-Security on EMR:
+# Security on EMR:
 
 There are two types of Security Groups in EMR:
-	EMR managed security groups
-	Additional security groups
+1. EMR managed security groups
+2. Additional security groups
+
 EMR managed security groups are updated for inbound/outbound rules automatically. You can choose the default mgd security group or select a custom security group under EMR managed security groups. Either of them that you select will be auto updated by EMR.
 If you want to have your own custom inbound/outbound rules (like SSH) you can configure Additional Security Group. This won’t be auto-updated.
 
@@ -1040,8 +1041,6 @@ ssl-client.xml
 
 For Spark, security config files are used for both authentication and transit security. The file name is spark-defaults.conf.
 
-
-
 Redshift Security:
 
 In-transit encryption:
@@ -1055,7 +1054,7 @@ Hardware Security Module (HSM) can be on-premise or on Cloud.
 Data blocks, system metadata and snapshots are all encrypted
 Encryption at rest is immutable. The only way to turn it off is by loading decrypted data to a new cluster.
 
-KMS:
+# KMS:
 Involves a 4-tier encryption key hierarchy in the below order of precedence, however the chronological order of encryption starts from the bottom up:
 Master key
 Cluster encryption key
