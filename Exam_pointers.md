@@ -490,6 +490,12 @@ Metadata for Iterations are stored in DynamoDB and you must provision this Dynam
 EMR Connector to Kinesis can only read from Streams, no writing back to Kinesis (that is, EMR Connector cannot act as a Kinesis Producer).
 Read throughput of EMR Kinesis Connector depends on two factors - EC2 instance size of EMR and record size in Streams.
 
+## EMR Operations
+
+### Choosing Instance Types
+
+1 MapReduce
+
 
 # Hue:
 
