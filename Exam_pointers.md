@@ -525,7 +525,7 @@ LDAP authentication can be set up for Hue login by editing the MasterNode:/etc/h
 The best practice is to store this as a JSON file in S3, instead of as an ini file in MasterNode (AWS has a sample JSON). You can specify either JSON or Config file while creating Cluster.
 Presto can be connected to a cluster using the same JSON method.
 
-#nHive:
+# Hive:
 
 You can query from and Insert data into a DynamoDB table using Hive by way of an external table in Hive (mapping table). You cannot create table, delete data or update data to DynamoDB table using Hive.
 External table is also how you access data in S3 (and share data with other resourcs).
@@ -535,7 +535,7 @@ Concurrently writing to a single table (from two clusters, for example)
 Reading from a table that’s being written to (it shows non-deterministic behaviour)
 
 
-Presto:
+# Presto:
 
 Query processing engine with connectors to different types of data sources. You can query RDBMS, NoSQL, Hive, Streaming data etc.
 Does in-memory processing. So very large queries and joins (100M+ records) may not be efficient. Use Hive instead
@@ -543,7 +543,7 @@ So Presto is more suited for “interactive analytics” rather than large “ba
 Presto is not a database.
 Not suited for OLTP workload
 
-Spark:
+# Spark:
 (Read Resources listed on “Spark on EMR Part 2” video. And do QwikLabs)
 Widely used due to performance gains over mapreduce, and gains are due to:
 In-memory processing
