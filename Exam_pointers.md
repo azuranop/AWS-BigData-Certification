@@ -494,30 +494,30 @@ Read throughput of EMR Kinesis Connector depends on two factors - EC2 instance s
 
 ### Choosing Instance Types
 
-1.MapReduce
+1. MapReduce
 
-Batch oriented 
-* m3 or m4 instance types
-Scale horizontally as data grows
+  Batch oriented 
+  * m3 or m4 instance types
+  Scale horizontally as data grows
 
 2. Machine learning 
 
-Can be compute intensive
-* p2 instances types
-* c3 or c4 instances types
+  Can be compute intensive
+  * p2 instances types
+  * c3 or c4 instances types
 
 3. Spark
 
-In memory caching helps with fast performance
-* r3 or r4
+   In memory caching helps with fast performance
+   * r3 or r4
 
 4. Large instance store base HDFS 
 
-MapReduce that require high I/O performance and high IOPs
-Large HBase clusters
+   MapReduce that require high I/O performance and high IOPs
+   Large HBase clusters
 
-* i2 (i3 released but not supported in EMR)
-* d2
+   * i2 (i3 released but not supported in EMR)
+   * d2
 
 # Hue:
 
